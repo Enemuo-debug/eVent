@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | eVent</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>🎟️ eVent Dashboard</h1>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section id="userDetails" class="user-section"></section>
+
+    <section class="form-section">
+      <h2>Create New Event</h2>
+      <form id="eventForm">
+        <input type="text" id="title" placeholder="Event Title" required />
+        <input type="date" id="date" required />
+        <input type="text" id="location" placeholder="Event Location" required />
+        <textarea id="description" placeholder="Event Description"></textarea>
+        <button type="submit">Create Event</button>
+      </form>
+    </section>
+
+    <section class="events-section">
+      <h2>Your Events</h2>
+      <div id="eventsList"></div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

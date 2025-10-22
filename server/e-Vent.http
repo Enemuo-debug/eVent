@@ -1,0 +1,6 @@
+@e_Vent_HostAddress = http://localhost:5008
+
+GET {{e_Vent_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

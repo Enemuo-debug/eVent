@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | e-Vent</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <h1>e-Vent</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home </a></li>
+                <li><a href="#" class="active">Sign Up</a></li>
+                <li><a href="/browser/signin.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="signup-container">
+        <div class="signup-card">
+            <h2>Create Your e-Vent Account</h2>
+            <p class="subtitle">Join our community and manage your events effortlessly.</p>
+            
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="UserName">Username</label>
+                    <input type="text" id="UserName" name="UserName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" id="Password" name="Password" required minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="ConfirmPassword">Confirm Password</label>
+                    <input type="password" id="ConfirmPassword" name="ConfirmPassword" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="OrganizationName">Organization Name</label>
+                    <input type="text" id="OrganizationName" name="OrganizationName" required>
+                </div>
+
+                <button type="submit" id="createAccountBtn">Create Account</button>
+            </form>
+
+            <p class="login-redirect">Already have an account? <a href="#">Log In</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 e-Vent. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                userName: document.getElementById("UserName").value,
+                email: document.getElementById("Email").value,
+                password: document.getElementById("Password").value,
+                confirmPassword: document.getElementById("ConfirmPassword").value,
+                organizationName: document.getElementById("OrganizationName").value
+            };
+
+            if (formData.password !== formData.confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            fetch("http://localhost:5008/managers/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            .then(async res => {
+                const text = await res.text();
+                try {
+                    return JSON.parse(text);
+                } catch {
+                    throw new Error(`Invalid JSON: ${text}`);
+                }
+            })
+            .then(data => {
+                alert("Registration successful: " + (data.message || ""));
+                if ((data.status || "").toLowerCase() === "success") {
+                    window.location.href = "signin.html";
+                }
+            })
+            .catch(err => console.error(err));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Event | eVent</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Edit Event</h1>
+    <button id="backBtn" class="logout-btn">Back to Dashboard</button>
+  </header>
+
+  <main>
+    <section class="form-section" id="updateForm">
+      <h2>Update Event Details</h2>
+      <form id="editForm">
+        <input type="text" id="title" placeholder="Event Title" required />
+        <input type="date" id="date" required />
+        <input type="text" id="location" placeholder="Event Location" required />
+        <textarea id="description" placeholder="Event Description"></textarea>
+        <button type="submit">Save Changes</button>
+      </form>
+    </section>
+
+    <section class="eventDesc" id="eventDesc">
+      <h2 id="eventName">Event Details</h2>
+      <p id="eventDescription">Event Description</p>
+      <p id="eventLocation">Event Location</p>
+      <small id="eventDate">Date: </small>
+      <button id="copy-form-link">COPY Event Form Link</button>
+    </section>
+    <div id="registeredUsers" style="margin-top:30px;"></div>
+    <section id="emailSection" style="display:none; margin-top:40px;">
+      <h3>Send Email to Event Goers</h3>
+      <form id="emailForm">
+        <input type="text" id="emailSubject" placeholder="Email Subject" required />
+        <textarea id="emailBody" placeholder="Enter your message here..." rows="6" required></textarea>
+        <button type="submit">Send Emails</button>
+      </form>
+    </section>
+
+    <section class="mapper-card" id="map">
+      <div class="mapper-header">
+        <h2>Form Fields Mapper</h2>
+        <button id="addFieldBtn" class="add-field-btn">+ Add Field</button>
+      </div>
+      <div id="mapperList" class="mapper-list"></div>
+    </section>
+  </main>
+
+  <script src="edit.js"></script>
+</body>
+</html>

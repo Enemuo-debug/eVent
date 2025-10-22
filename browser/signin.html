@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | e-Vent</title>
+  <link rel="stylesheet" href="signin.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome Back</h2>
+    <p>Log in to your e-Vent account</p>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="UserName" placeholder="Enter your username" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" placeholder="Enter your password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a id="toSignUp" href="/browser/signup.html">Sign Up</a></p>
+
+    <p id="message" class="message"></p>
+  </div>
+
+  <script src="signin.js"></script>
+</body>
+</html>

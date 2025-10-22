@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Check In/Out</title>
+</head>
+<body>
+  <h1 id="status">Loading...</h1>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get("email");
+    const eventId = urlParams.get("eventId");
+
+    if (!email || !eventId) {
+      document.getElementById("status").innerText = "Missing email or event ID in URL.";
+    } else {
+      const isLeaving = confirm("Are you leaving the event? Click Cancel if you are entering.");
+
+      fetch(`http://localhost:5008/events/${email}/${eventId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(isLeaving),
+      })
+        .then(async res => {
+          const data = await res.json().catch(() => ({}));
+          if (res.ok) {
+            alert(data.message || "Success!");
+            document.getElementById("status").innerText = data.message;
+          } else {
+            alert(data.message || "Error occurred.");
+            document.getElementById("status").innerText = data.message || "Error.";
+          }
+        })
+        .catch(err => {
+          alert("Server error: " + err.message);
+          document.getElementById("status").innerText = "Server error.";
+        });
+    }
+  </script>
+</body>
+</html>
