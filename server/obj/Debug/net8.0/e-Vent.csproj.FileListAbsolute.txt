@@ -284,3 +284,4 @@ C:\Users\Admin\Documents\Back End Dev\eVent\server\obj\Debug\net8.0\e-Vent.genru
 C:\Users\Admin\Documents\Back End Dev\eVent\server\obj\Debug\net8.0\ref\e-Vent.dll
 C:\Users\Admin\Documents\Back End Dev\eVent\server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Admin\Documents\Back End Dev\eVent\server\bin\Debug\net8.0\QRCoder.dll
+C:\Users\Admin\Documents\Back End Dev\eVent\server\obj\Debug\net8.0\e-Vent.sourcelink.json

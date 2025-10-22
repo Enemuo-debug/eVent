@@ -1,0 +1,121 @@
+# =========================
+# ASP.NET Core / Web API
+# =========================
+
+# Build results
+[Bb]in/
+[Oo]bj/
+out/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+# Configuration
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json.user
+*.Secret.json
+
+# Logs
+*.log
+logs/
+LogFiles/
+
+# Entity Framework
+Migrations
+*.dbmdl
+*.bak
+*.ldf
+*.mdf
+
+# IIS / Hosting
+iisnode/
+wwwroot/lib/
+wwwroot/node_modules/
+wwwroot/dist/
+wwwroot/build/
+
+# Node / Frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+package-lock.json
+dist/
+build/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+# Include package reference files
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# Resharper / JetBrains
+_ReSharper*/
+*.DotSettings.user
+*.sln.iml
+
+# Rider
+.idea/
+*.sln.iml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swn
+*.orig
+
+# Publish outputs
+publish/
+publish_output/
+*.Publish.xml
+
+# Coverage / Testing
+coverage/
+TestResults/
+*.coverage
+*.coveragexml
+
+# Docker
+docker-compose.override.yml
+.docker/
+**/Dockerfile.*
+*.tar
+
+# Secrets / Keys
+secrets.json
+*.pfx
+*.key
+*.cer
+
+# Other
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.DS_Store
+*.stackdump
+
+# Ignore local environment files
+.env
+.env.*
