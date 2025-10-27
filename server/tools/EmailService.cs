@@ -3,7 +3,6 @@ using System.Net.Mail;
 using DotNetEnv;
 using QRCoder;
 using System.Drawing.Imaging;
-using Microsoft.AspNetCore.Mvc;
 using e_Vent.dtos;
 
 public class EmailService
@@ -15,12 +14,11 @@ public class EmailService
   }
   public async Task SendEmailWithQrAsync(string to, string subject, string qrData)
   {
-      // 🔹 Load SMTP credentials from environment variables
       var smtpServer = Environment.GetEnvironmentVariable("SmtpServer");
       var port = int.Parse(Environment.GetEnvironmentVariable("Port") ?? "587");
       var senderEmail = Environment.GetEnvironmentVariable("SenderEmail") ?? "null";
       var senderName = Environment.GetEnvironmentVariable("SenderName");
-      var username = Environment.GetEnvironmentVariable("Username");
+      var username = Environment.GetEnvironmentVariable("User");
       var password = Environment.GetEnvironmentVariable("Password");
 
 
@@ -49,10 +47,10 @@ public class EmailService
 
       var mail = new MailMessage
       {
-          From = new MailAddress(senderEmail, senderName),
-          Subject = subject,
-          Body = htmlBody,
-          IsBodyHtml = true
+        From = new MailAddress(senderEmail, senderName),
+        Subject = subject,
+        Body = htmlBody,
+        IsBodyHtml = true
       };
       mail.To.Add(to);
 
