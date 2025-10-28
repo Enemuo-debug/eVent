@@ -1,5 +1,5 @@
-const apiBase = "http://localhost:5008/events";
-const authBase = "http://localhost:5008/managers";
+const apiBase = "https://e-vent.runasp.net/events";
+const authBase = "https://e-vent.runasp.net/managers";
 
 const userDetailsDiv = document.getElementById("userDetails");
 const eventsList = document.getElementById("eventsList");
