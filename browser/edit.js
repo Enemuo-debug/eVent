@@ -210,7 +210,7 @@ function validateForm() {
 
 async function renderRegisteredUsers(eventId) {
   try {
-    const res = await fetch(`http://localhost:5008/events/form/${eventId}`, {
+    const res = await fetch(`${apiBase}/form/${eventId}`, {
       method: "GET",
       credentials: "include",
     });
@@ -265,7 +265,7 @@ emailForm?.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch(`http://localhost:5008/events/send-mails/${eventId}`, {
+    const res = await fetch(`${apiBase}/send-mails/${eventId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
