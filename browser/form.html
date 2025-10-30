@@ -99,7 +99,7 @@
     console.log("Form Responses:", responses);
 
     try {
-        const res = await fetch("http://localhost:5008/events/submitForm", {
+        const res = await fetch(`${apiBase}/submitForm`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
